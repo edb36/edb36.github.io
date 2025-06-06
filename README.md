@@ -1,1 +1,40 @@
-hj
+<html>
+<head>
+<style>
+body {
+  background-image: url('m2.jpg'); /* This is the starting background */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+    #d{
+    display: none;    
+    }
+    #cj{
+    display: none;    
+    }
+    #bt{
+    display: block;
+        }
+</style>
+    
+  <h1 style="color:#00ffe8; background-color:Tomato; border:5px solid DodgerBlue;">NOOOO PLEASE DON'T!!!!</h1>
+
+  <script>
+      
+    alert( 'Im about to drop an n bomb' );
+  </script>
+<button id="bt" type="button" onclick="run()">Click Me If You Want Me To.</button>
+  <h2 id="d" style="color:#fbff00; background-color:#001bff; border:5px solid Tomato;">wow you degenerate</h2>
+<img id="cj" src="cj.jpg" alt="W3Schools.com" width="410" height="600">
+    <script>
+        function run(){
+document.getElementById('d').style.display= 'block';   document.getElementById('cj').style.display= 'block';  
+document.body.style.backgroundImage ="url('m1.jpg')";
+document.getElementById('bt').style.display= 'none';
+            
+        }
+    </script>
+</body>
+
+</html>
