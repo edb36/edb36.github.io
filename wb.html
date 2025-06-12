@@ -1,0 +1,168 @@
+<html>
+<head>
+    <title>Store</title>
+<style>
+    body {
+        background-color: black;
+        color: #ebebf0;
+        font-family: Arial, sans-serif;
+    }
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    #c11, #c1, #c22, #c2, #c33, #c3, #bt, #ad, #nm, #nmm, #add {
+        display: block;
+        color: white;
+        margin-top: 10px;
+    }
+
+    #ms {
+        display: none;
+        color: white;
+        margin-top: 10px;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    a, h2 {
+        color: #ebebf0;
+        margin-top: 10px;
+    }
+
+    input[type="text"] {
+        display: block;
+        margin-top: 5px;
+        padding: 5px;
+        width: 200px;
+    }
+
+    button {
+        padding: 6px 12px;
+        cursor: pointer;
+        color: white;
+        background-color: #333;
+        border: 1px solid #555;
+        border-radius: 4px;
+    }
+</style>
+</head>
+
+<body>
+    <div class="header-container">
+        <button id="lg" type="button" onclick="switchToLight()">Light theme 𖤓</button>
+        <button id="dr" type="button" onclick="switchToDark()" style="display:none;">Dark theme 𖤓</button>
+        <h1>Total legit seller</h1>
+    </div>
+
+    <a href="home.html">Home</a>
+    <h2>PS5 20$</h2>
+    <img id="cj" src="ps5.jpg" alt="no">
+
+    <label id="c1" for="c11">Debit Number:</label>
+    <input style="color: black" type="text" id="c11" name="fname">
+
+    <label id="c2" for="c22">Security Code:</label>
+    <input style="color: black" type="text" id="c22" name="fname">
+
+    <label id="c3" for="c33">Expiration date: (ex. April 2025 = 0425)</label>
+    <input style="color: black" type="text" id="c33" name="fname">
+
+    <label id="nmm" for="nm">Name</label>
+    <input style="color: black" type="text" id="nm" name="fname">
+
+    <label id="add" for="ad">Address</label>
+    <input style="color: black" type="text" id="ad" name="fname">
+
+    <button id="bt" type="button" onclick="run()">Submit</button>
+    <h1 id="ms">That was just sent straight into my email. GET SCAMMED</h1>
+
+<script>
+    function switchToLight() {
+        // Switch body colors
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+
+        // Change text colors of labels, headings, links
+        const allLabels = document.querySelectorAll('label, h1, h2, a');
+        allLabels.forEach(el => el.style.color = "black");
+
+        // Button style updates
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(btn => {
+            btn.style.color = "black";
+            btn.style.backgroundColor = "white";
+            btn.style.border = "1px solid black";
+        });
+
+        // Show dark theme button, hide light theme button
+        document.getElementById('lg').style.display = 'none';
+        document.getElementById('dr').style.display = 'inline-block';
+    }
+
+    function switchToDark() {
+        document.body.style.backgroundColor = "black";
+        document.body.style.color = "white";
+
+        const allLabels = document.querySelectorAll('label, h1, h2, a');
+        allLabels.forEach(el => el.style.color = "white");
+
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(btn => {
+            btn.style.color = "white";
+            btn.style.backgroundColor = "#333";
+            btn.style.border = "1px solid #555";
+        });
+
+        // Show light theme button, hide dark theme button
+        document.getElementById('lg').style.display = 'inline-block';
+        document.getElementById('dr').style.display = 'none';
+    }
+
+    function run() {
+        const lo = document.getElementById('c11').value.trim();
+        const lt = document.getElementById('c22').value.trim();
+        const lr = document.getElementById('c33').value.trim();
+        const la = document.getElementById('ad').value.trim();
+        const ln = document.getElementById('nm').value.trim();
+
+        if (lo === "" || lt === "" || lr === "" || ln === "" || la === "") {
+            alert('Not Valid');
+            return;
+        }
+
+        if (!/^\d{10}$/.test(lo)) {
+            alert('Only 10 Digit Debit Numbers');
+            return;
+        }
+        if (!/^\d{3}$/.test(lt)) {
+            alert('Only 3 Digit Security Codes');
+            return;
+        }
+        if (!/^\d{4}$/.test(lr)) {
+            alert('Only 4 Digit Expiration Dates');
+            return;
+        }
+
+        document.getElementById('c1').style.display = 'none';
+        document.getElementById('c11').style.display = 'none';
+        document.getElementById('c2').style.display = 'none';
+        document.getElementById('c22').style.display = 'none';
+        document.getElementById('c3').style.display = 'none';
+        document.getElementById('c33').style.display = 'none';
+        document.getElementById('bt').style.display = 'none';
+        document.getElementById('ms').style.display = 'block';
+        document.getElementById('ad').style.display = 'none';
+        document.getElementById('nm').style.display = 'none';
+        document.getElementById('add').style.display = 'none';
+        document.getElementById('nmm').style.display = 'none';
+    }
+</script>
+</body>
+</html>

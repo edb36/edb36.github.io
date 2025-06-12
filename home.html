@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Home</title>
+  <style>
+    body {
+      font-family: Tahoma, sans-serif;
+      transition: background-color 0.3s ease;
+      background-color: hsl(180, 100%, 60%);
+    }
+    h1 {
+      text-align: center;
+    }
+    .links {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    #slider-container {
+      text-align: left;
+      margin-top: 20px;
+    }
+      
+    input[type="range"] {
+      width: 300px;
+    }
+    #btn, #bm, #btn2 {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #button-container {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="color: white">My Sites</h1>
+
+  <div class="links">
+    <a href="wb.html">My store</a>
+    <p></p>
+    <a href="js.html">Other Site</a>
+  </div>
+
+  <div id="button-container">
+    <button id="btn" type="button" onclick="setRandomColor()">Click Me?</button>
+    <button id="bm" type="button" onclick="bm()">Or Me?</button>
+  </div>
+<button id="btn2" type="button" onclick="cb()">Mabye Me?</button>
+  <div id="slider-container">
+    <input type="range" id="myRange" name="hue" min="0" max="360" value="180">
+  </div>
+
+  <script>
+    const slider = document.getElementById('myRange');
+
+    function updateHue() {
+      const hue = slider.value;
+      document.body.style.backgroundColor = `hsl(${hue}, 100%, 60%)`;
+    }
+
+    slider.addEventListener('input', updateHue);
+
+    updateHue();
+
+    function setRandomColor() {
+      const randomHue = Math.floor(Math.random() * 360);
+      document.body.style.backgroundColor = `hsl(${randomHue}, 100%, 60%)`;
+      slider.value = randomHue;
+    }
+
+    function bm() {
+      alert('BOOOOM!!!');
+    }
+      function cb() {
+       document.body.style.backgroundColor = "black";
+    }
+  </script>
+
+</body>
+</html>
